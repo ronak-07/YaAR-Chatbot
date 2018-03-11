@@ -1,0 +1,340 @@
+<aiml version="1.0.1" encoding="UTF-8">
+<!-- basic_chat.aiml -->
+
+<category>
+    <pattern>WHAT ARE THE EATERIES OF BPHC</pattern>
+    <template>
+        Here is the list of eateries:
+        1.Yummpys
+        2.BitsnBytes
+        3.C3
+    </template>  
+</category> 
+
+<category>
+    <pattern>DO YOU KNOW ANY EATERIES IN BITS HYDERABAD</pattern>
+    <template>C3, Bits n Bytes, yummpy's and mess maybe?</template>
+</category>
+
+<category>
+    <pattern>DO YOU KNOW ANY * EATERIES IN BITS HYDERABAD</pattern>
+    <template><srai>DO YOU KNOW ANY EATERIES IN BITS HYDERABAD</srai></template>
+</category>
+
+<category>
+    <pattern>WHAT ARE THE EATERIES IN BITS HYDERABAD</pattern>
+    <template><srai>DO YOU KNOW ANY EATERIES IN BITS HYDERABAD</srai></template>
+</category>
+
+<category>
+    <pattern>WHAT ARE THE * EATERIES IN BITS HYDERABAD</pattern>
+    <template><srai>DO YOU KNOW ANY EATERIES IN BITS HYDERABAD</srai></template>
+</category>
+
+<category>
+    <pattern>CAN YOU GIVE ME DETAILS OF EATERIES IN BITS HYDERABAD</pattern>
+    <template><srai>DO YOU KNOW ANY EATERIES IN BITS HYDERABAD</srai></template>
+</category>
+
+<category>
+    <pattern>WHERE CAN I FIND FOOD IN BITS HYDERABAD</pattern>
+    <template><srai>DO YOU KNOW ANY EATERIES IN BITS HYDERABAD</srai></template>
+</category>
+
+<category>
+    <pattern>WHERE CAN I HAVE GOOD FOOD IN BITS HYDERABAD</pattern>
+    <template><srai>DO YOU KNOW ANY EATERIES IN BITS HYDERABAD</srai></template>
+</category>
+
+<category>
+    <pattern>WHERE CAN I FIND GOOD FOOD IN BITS HYDERABAD</pattern>
+    <template><srai>DO YOU KNOW ANY EATERIES IN BITS HYDERABAD</srai></template>
+</category>
+
+<category>
+    <pattern>WHAT ARE THE BEST PLACES TO EAT IN YOUR CAMPUS</pattern>
+    <template><srai>DO YOU KNOW ANY EATERIES IN BITS HYDERABAD</srai></template>
+</category>
+
+<category>
+    <pattern>WHERE CAN I HAVE MAGGI</pattern>
+    <template>Yummpys is your place.They serve you with many kinds of maggi</template>
+</category>
+
+
+<category>
+    <pattern>WHERE SHOULD I BE GOING TO HAVE MAGGI</pattern>
+    <template><srai>WHERE CAN I HAVE MAGGI</srai></template>
+</category>
+
+<category>
+    <pattern>CAN YOU SHOW ME THE MENU AT *</pattern>
+    <template><think><set name = "eatery"><star /></set></think>Here is the menu.<system>python menu.py <star /></system>. What would you like to have?</template>
+</category>
+
+<category>
+    <pattern>CAN YOU SHOW ME THE MENU OF *</pattern>
+    <template><think><set name = "eatery"><star /></set></think>Here is the menu.<system>python menu.py <star /></system>. What would you like to have?</template>
+</category>
+
+<category>
+	<pattern>CAN YOU ORDER * FOR ME</pattern>
+	<template> Okay. Ordering <star /> at <get name="eatery" /> for you. </template>
+</category>
+
+<category>
+    <pattern>* IS MY ORDER</pattern>
+    <template> Okay. Ordering <star /> at <get name="eatery" /> for you. </template>
+</category>
+
+<category>
+    <pattern>CAN YOU GIVE ME THE MENU AT *</pattern>
+    <template><think><set name = "eatery"><star /></set></think>Here is the menu.<system>python menu.py <star /></system>. What would you like to have?</template>
+</category>
+
+<category>
+    <pattern>CAN YOU GIVE ME THE MENU OF *</pattern>
+    <template><think><set name = "eatery"><star /></set></think>Here is the menu.<system>python menu.py <star /></system>. What would you like to have?</template>
+</category>
+
+<category>
+    <pattern>WHATS THE MENU OF *</pattern>
+    <template><think><set name = "eatery"><star /></set></think>Here is the menu.<system>python menu.py <star /></system>. What would you like to have?</template>
+</category>
+
+<category>
+    <pattern>WHAT IS THE MENU OF *</pattern>
+    <template><think><set name = "eatery"><star /></set></think>Here is the menu.<system>python menu.py <star /></system>. What would you like to have?</template>
+</category>
+
+<category>
+    <pattern>WHATS THE BEST ITEM</pattern>
+    <template>
+    <condition name = "eatery" value = "yummpys">
+    <random>
+    <li> I have heard that the Butter Garlic Fries are a must have</li>
+    <li> Hakka noodles always!</li>
+    <li> Egg Burji Maggi is very yummy!!</li>
+    <li> Masala Omlette is very tasty</li>
+    </random>
+    </condition>
+    <condition name = "eatery" value = "bitsnbytes">
+    <random>
+    <li> Double meat sandwich is very tasty.</li>
+    <li> People tell me that people experience heaven while eating Chicken Shawarma I don't know what heaven is though.</li>
+    <li> Waffles are my favourite.</li>
+    </random>
+    </condition>
+    <condition name = "eatery" value = "c3">
+    <random>
+    <li> Fried idly is very yummy.</li>
+    <li> Dhinchak Sundae is too good!</li>
+    <li> Ginger chai there makes my day.</li>
+    </random>
+    </condition>
+    </template>
+</category>
+
+<category>
+    <pattern>WHICH IS THE BEST ITEM</pattern>
+    <template><srai>WHATS THE BEST ITEM</srai></template>
+</category>
+
+<category>
+    <pattern>WHAT IS THE BEST ITEM</pattern>
+    <template><srai>WHATS THE BEST ITEM</srai></template>
+</category>
+
+<category>
+    <pattern>WHAT ARE THE SPECIAL ITEMS</pattern>
+    <template>
+    <condition name = "eatery" value = "yummpys">
+    <random>
+    <li> Veg.Schezwan Noodles, Chicken Schezwan Noodles, Egg Schezwan Noodles, Potato Nuggets</li>
+    <li> Veg. Hakka Noodles, Chicken Hakka Noodles, Egg Hakka Noodles, Chicken Wings</li>
+    <li> Double Cheese Fries, Blue Lime Soda, Magic Masala Maggi </li>
+    <li> Oh no!!, there are no specials today at yummpys. You can try specials at bits n bytes</li>
+    </random>
+    </condition>
+    <condition name = "eatery" value = "bitsnbytes">
+    <random>
+    <li> Crispy Paneer Burger, Grilled Chicken Sandwich</li>
+    <li> Waffles with whipped cream, Chicken Shawarma</li>
+    <li> Oreo Milk shake, Dominoes style Cheese burst farmhouse pizza with extra cheese</li>
+    <li>Sorry, no specials today.</li>
+    </random>
+    </condition>
+    <condition name = "eatery" value = "c3">
+    <random>
+    <li> South indian combo.You get 2 Idli, 1 Vada and 1 Masala Dosa at just Rs.90</li>
+    <li> Ice Creams: Alphonso Treat and Litchi Gold, Desserts: Strawberry Cheesecake, Gulab Jamun with Vanilla Ice Cream</li>
+    <li> Special chats today! Samosa Chat, Cheese Pav Bhaji, Masala Puri</li>
+    <li> C3 is closed today. You can try the food at yummpys today.</li>
+    </random>
+    </condition>
+    </template>
+</category>
+
+<category>
+    <pattern>CAN YOU GIVE ME THE SPECIAL ITEMS</pattern>
+    <template>Of course I can. That's my Job. <srai>WHAT ARE THE SPECIAL ITEMS</srai></template>
+</category>
+
+<category>
+    <pattern>CAN YOU SHOW ME PICTURES OF *</pattern>
+    <template>Sure.Here you go.<system>python google.py <star /> 2</system></template>
+</category>
+
+<category>
+    <pattern>CAN YOU SEARCH FOR * ON GOOGLE</pattern>
+    <template>Sure.Here you go.<system>python google.py <star /> 1</system></template>
+</category>
+
+<category>
+    <pattern>SEARCH FOR * ON GOOGLE</pattern>
+    <template>Sure.Here you go.<system>python google.py <star /> 1</system></template>
+</category>
+
+<category>
+    <pattern>SEARCH FOR *</pattern>
+    <template>Sure.Here you go.<system>python google.py <star /> 1</system></template>
+</category>
+
+<category>
+    <pattern>CAN YOU SEARCH FOR *</pattern>
+    <template>Sure.Here you go.<system>python google.py <star /> 1</system></template>
+</category>
+
+<category>
+    <pattern>GOOGLE *</pattern>
+    <template>Sure.Here you go.<system>python google.py <star /> 1</system></template>
+</category>
+
+<category>
+    <pattern>PICTURES OF *</pattern>
+    <template>Sure.Here you go.<system>python google.py <star /> 2</system></template>
+</category>
+
+<category>
+    <pattern>IMAGES OF *</pattern>
+    <template>Sure.Here you go.<system>python google.py <star /> 2</system></template>
+</category>
+
+<category>
+    <pattern>WHAT SPECIALS DO YOU HAVE TODAY</pattern>
+    <template><srai>WHAT ARE THE SPECIALS TODAY</srai></template>
+</category>
+
+<category>
+    <pattern>WHATS THE MENU AT YUMMPYS</pattern>
+    <template>Let me tell you what's best! Butter Maggi Noodles ( Rs. 45), Hot Garlic Maggi Noodles (Rs. 65), Chicken Saussages maggi(Rs. 55) try these first!
+	</template>
+</category>
+
+<category>
+    <pattern>WHATS THE MENU AT BITSNBYTES</pattern>
+    <template>I am usually out of stock but if you're lucky you could try Chicken Shawarma ( Rs. 80), Chocolate Donut (Rs. 35), Double meat sandwich(Rs. 55) </template>
+</category>
+
+<category>
+    <pattern>WHATS THE MENU LIKE AT C3</pattern>
+    <template>You can have chai, coffee and special shakes at their "Cold Lab" :P. Today's Special is Papdi Chat, Paneer + naan roti</template>
+</category>
+
+<category>
+    <pattern>HOWS THE MESS</pattern>
+    <template>Try at your own risk.</template>
+</category>
+
+<category>
+    <pattern>I AM NOT HUNGRY</pattern>
+    <template>Are you telling you are not hungry?</template>
+</category>
+
+<category>
+    <pattern>I AM HUNGRY</pattern>
+    <template>I can suggest you a few places to eat</template>
+</category>
+
+<category>
+    <pattern>WHAT ARE THEY</pattern>
+    <that>I CAN SUGGEST YOU A FEW PLACES TO EAT</that>
+    <template><srai>DO YOU KNOW ANY EATERIES IN BITS HYDERABAD</srai></template>
+</category>
+
+<category>
+    <pattern>TELL ME</pattern>
+    <that>I CAN SUGGEST YOU A FEW PLACES TO EAT</that>
+    <template><srai>DO YOU KNOW ANY EATERIES IN BITS HYDERABAD</srai></template>
+</category>
+
+<category>
+    <pattern>YES PLEASE</pattern>
+    <that>I CAN SUGGEST YOU A FEW PLACES TO EAT</that>
+    <template><srai>DO YOU KNOW ANY EATERIES IN BITS HYDERABAD</srai></template>
+</category>
+
+<category>
+    <pattern>SUGGEST SOME</pattern>
+    <that>I CAN SUGGEST YOU A FEW PLACES TO EAT</that>
+    <template><srai>DO YOU KNOW ANY EATERIES IN BITS HYDERABAD</srai></template>
+</category>
+
+<category>
+    <pattern>WHERE</pattern>
+    <that>I CAN SUGGEST YOU A FEW PLACES TO EAT</that>
+    <template>BITS HYDERABAD</template>
+</category>
+
+<category>
+    <pattern>WHAT ARE THE EATERIES THERE</pattern>
+    <that>BITS HYDERABAD</that>
+    <template><srai>DO YOU KNOW ANY EATERIES IN BITS HYDERABAD</srai></template>
+</category>
+
+<category>
+    <pattern>WHAT IS THE TEMPERATURE IN *</pattern>
+    <template>Let me see the temperature in <star />. The temperature is <system>python weather.py <star /> 1</system></template>
+</category>
+
+<category>
+    <pattern>WHAT IS THE HUMIDITY IN *</pattern>
+    <template>Let me see the humidity in <star />. The humidity is <system>python weather.py <star /> 2</system></template>
+</category>
+
+<category>
+    <pattern>GIVE ME THE TEMPERATURE IN *</pattern>
+    <template><srai>WHAT IS THE TEMPERATURE IN <star /></srai></template>
+</category>
+
+<category>
+    <pattern>GIVE ME THE HUMIDITY IN *</pattern>
+    <template><srai>WHAT IS THE HUMIDITY IN <star /></srai></template>
+</category>
+
+<category>
+    <pattern>WHATS THE TEMPERATURE IN *</pattern>
+    <template><srai>WHAT IS THE TEMPERATURE IN <star /></srai></template>
+</category>
+
+<category>
+    <pattern>WHATS THE HUMIDITY IN *</pattern>
+    <template><srai>WHAT IS THE HUMIDITY IN <star /></srai></template>
+</category>
+
+<category>
+    <pattern>WHAT IS THE WEATHER IN *</pattern>
+    <template>THe weather in <star /> is <system>python weather.py <star /> 3</system></template>
+</category>
+
+<category>
+    <pattern>GIVE ME THE WEATHER IN *</pattern>
+    <template><srai>WHAT IS THE WEATHER IN <star />.</srai></template>
+</category>
+
+<category>
+    <pattern>WHATS THE WEATHER IN *</pattern>
+    <template><srai>WHAT IS THE WEATHER IN <star /></srai></template>
+</category>
+
+</aiml>
